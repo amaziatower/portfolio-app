@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 223 47% 20%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 213 31% 91%;
+
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+  }
+
+  .violet-gradient {
+    background: #804dee;
+    background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+    background: -webkit-linear-gradient(
+      -90deg,
+      #804dee 0%,
+      rgba(60, 51, 80, 0) 100%
+    );
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-sm bg-white/5;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-blue-900 to-blue-600;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-blue-500;
+  }
+
+  .animated-border {
+    @apply relative after:absolute after:inset-0 after:p-[1px] after:bg-gradient-to-r after:from-primary/50 after:via-purple-500/50 after:to-blue-500/50 after:rounded-lg after:mask-border after:animate-border-shine;
+  }
+
+  .contact-input {
+    @apply bg-white/5 border-white/10 text-white rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300;
+  }
+
+  .contact-label {
+    @apply text-white/80 mb-2 block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Swiper styles */
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: auto;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  background: theme('colors.primary.DEFAULT');
+}
+
+.swiper-pagination-bullet-active {
+  background: theme('colors.primary.DEFAULT');
+}
