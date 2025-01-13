@@ -4,6 +4,8 @@ import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import { Testimonials } from "@/components/Testimonials";
 import { WorkExperience } from "@/components/WorkExperience";
+import { Summary } from "@/components/Summary";
+import { Achievements } from "@/components/Achievements";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -22,10 +24,8 @@ const Index = () => {
 
   return (
     <main className="min-h-screen pt-16 relative overflow-hidden">
-      {/* Main gradient background */}
       <div className="fixed inset-0 bg-gradient-to-br from-background via-accent/30 to-background z-0" />
       
-      {/* Animated gradient orbs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <motion.div 
           initial={{ scale: 0.8, opacity: 0.5 }}
@@ -70,17 +70,21 @@ const Index = () => {
         />
       </div>
 
-      {/* Subtle grid pattern overlay */}
       <div className="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4wMiIvPjwvZz48L3N2Zz4=')] opacity-30 z-0" />
 
-      {/* Content */}
       <div className="relative z-10">
         <Navigation />
         <section id="about">
           <Hero />
         </section>
+        <section id="summary">
+          <Summary />
+        </section>
         <section id="experience">
           <WorkExperience />
+        </section>
+        <section id="achievements">
+          <Achievements />
         </section>
         <section id="projects">
           <Projects />

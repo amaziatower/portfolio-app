@@ -11,8 +11,8 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast({
-      title: t("contact.success"),
-      description: t("contact.successMessage"),
+      title: "Message Sent Successfully!",
+      description: "Thank you for reaching out. I'll get back to you soon.",
     });
   };
 
@@ -20,44 +20,46 @@ export const Contact = () => {
     <section className="py-16 md:py-20 relative overflow-hidden">
       <div className="container px-4 md:px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4">{t("contact.title")}</h2>
-          <p className="text-muted-foreground">{t("contact.description")}</p>
+          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-muted-foreground">
+            Feel free to reach out for collaborations or just a friendly hello
+          </p>
         </div>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium">
-              {t("contact.name")}
+              Full Name
             </label>
             <Input
               id="name"
-              placeholder={t("contact.namePlaceholder")}
+              placeholder="John Doe"
               required
             />
           </div>
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">
-              {t("contact.email")}
+              Email Address
             </label>
             <Input
               id="email"
               type="email"
-              placeholder={t("contact.emailPlaceholder")}
+              placeholder="john.doe@example.com"
               required
             />
           </div>
           <div className="space-y-2">
             <label htmlFor="message" className="text-sm font-medium">
-              {t("contact.message")}
+              Your Message
             </label>
             <Textarea
               id="message"
-              placeholder={t("contact.messagePlaceholder")}
+              placeholder="I'd like to discuss a potential project..."
               required
               className="min-h-[150px]"
             />
           </div>
           <Button type="submit" className="w-full">
-            {t("contact.submit")}
+            Send Message
           </Button>
         </form>
       </div>
